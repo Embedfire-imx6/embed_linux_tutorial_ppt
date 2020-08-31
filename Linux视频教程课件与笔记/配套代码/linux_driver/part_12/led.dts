@@ -1,0 +1,46 @@
+/dts-v1/;
+/plugin/;
+/ {
+	fragment@0 {
+		target-path = "/";
+		__overlay__ {
+			/* bar peripheral */
+			rgb_led{
+            #address-cells = <1>;
+            #size-cells = <1>;
+            compatible = "fire,rgb_led";
+
+            /*红灯节点*/
+            ranges;
+            rgb_led_red@0x020C406C{
+                reg = <0x020C406C 0x00000004
+                    0x020E006C 0x00000004
+                    0x020E02F8 0x00000004
+                    0x0209C000 0x00000004
+                    0x0209C004 0x00000004>;
+                status = "okay";
+            };
+
+            /*绿灯节点*/
+            rgb_led_green@0x020C4074{
+                reg = <0x020C4074 0x00000004
+                    0x020E01E0 0x00000004
+                    0x020E046C 0x00000004
+                    0x020A8000 0x00000004
+                    0x020A8004 0x00000004>;
+                status = "okay";
+            };
+
+            /*蓝灯节点*/
+            rgb_led_blue@0x020C4074{
+                reg = <0x020C4074 0x00000004
+                    0x020E01DC 0x00000004
+                    0x020E0468 0x00000004
+                    0x020A8000 0x00000004
+                    0x020A8004 0x00000004>;
+                status = "okay";
+            };
+        };
+		};
+	};
+};
