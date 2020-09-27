@@ -25,7 +25,3 @@
         }
         __bss_end = .;
  }
-
- cd /home/embedfire/bare_mental/part_1/download_tool
- cp base.bin /home/embedfire/bare_mental/part_1/download_tool
- ./mkimage.sh base.bin
